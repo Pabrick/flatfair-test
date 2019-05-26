@@ -1,0 +1,93 @@
+@import "./../../../../assets/styles/flatfair-theme.scss";
+
+.flatbond-create {
+
+    h2 {
+        color: $flatfair-color-blue-dark;
+        margin-bottom: 10px;
+    }
+
+    .loading {
+        text-align: center;
+    }
+
+    &-form {
+
+        padding: 10px 0;
+        &--row {
+            text-align: right;
+        }
+
+        &_pound,
+        &_pound--fee,
+        &_per,
+        &_postcode--label {
+            color: $flatfair-color-blue-light;
+            font-size: 20px;
+            padding: 0 10px;
+            text-align: right;
+            width: 10%;
+        }
+
+        &_amount,
+        &_recurrence,
+        &_postcode {
+            border: 1px solid $flatfair-color-gray-light;
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 0 10px;
+            text-align: right;
+            width: 40%;
+        }
+
+        &_pound--fee {
+            color: $flatfair-color-blue-dark;
+        }
+
+        &_fee {
+            background-color: $flatfair-color-white-light;
+            border: 1px solid $flatfair-color-gray-light;
+            color: $flatfair-color-blue-dark;
+            font-size: 24px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+            text-align: right;
+            width: 90%;
+        }
+
+        &_postcode--label {
+            text-align: right;
+            width: 40%;
+        }
+
+        &_postcode {            
+            width: 60%;
+        }
+
+        &_send {
+            background-color: $flatfair-color-blue-light;
+            border: 2px solid $flatfair-color-blue-dark;
+            border-radius: 4px;
+            color: $flatfair-color-white-light;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px 0;
+            padding: 0 10px;
+            text-align: center;
+            width: 40%;
+
+            &:hover {
+                background-color: $flatfair-color-blue-dark;
+                border: 2px solid $flatfair-color-blue-light;
+            }
+
+            &:disabled {
+                background-color: $flatfair-color-gray-light;
+                color: $flatfair-color-blue-light;
+                cursor: not-allowed;
+            }
+        }
+
+    }
+
+}

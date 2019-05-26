@@ -1,0 +1,21 @@
+<div class="flatbond-details" aria-label="details-flatbond">
+    <section>
+        <h2>Details of your Flatbond</h2>
+
+        <div class="flatbond-details--row">
+            You pay £<span>{{ details.amount }}</span> per <span>{{ details.recurrence }}</span>
+        </div>
+
+        <div class="flatbond-details--row">
+            for your home in <span>{{ details.postcode }}</span>
+        </div>
+
+        <div class="flatbond-details--row flatbond-details_fee">
+            So we offer a membership fee of £ <span>{{ details.fee }}</span>
+        </div>
+
+        <div class="flatbond-details--row">
+            <button class="flatbond-details_button"(click)="back()">Back</button>
+        </div>
+    </section>
+</div>

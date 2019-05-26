@@ -1,0 +1,36 @@
+<div class="flatbond-create" aria-label="create-flatbond">
+  <section *ngIf="loading" class="loading">
+    <img src="./../../../../assets/images/spinner.gif">
+  </section>
+
+  <section *ngIf="!loading">
+    <h2>I pay for my rent</h2>
+    <form class="flatbond-create-form" [formGroup]="flatbondForm" (ngSubmit)="onSubmit(flatbondForm)">
+
+      <div class="flatbond-create-form--row">
+        <label class="flatbond-create-form_pound">£</label>
+        <input class="flatbond-create-form_amount" type="text" numeric numericType="decimal" formControlName="amount" placeholder="Amount" />
+        <label class="flatbond-create-form_per">per</label>
+        <select class="flatbond-create-form_recurrence" formControlName="recurrence">
+          <option value="week">week</option>
+          <option value="month">month</option>
+        </select>
+      </div>
+
+      <div class="flatbond-create-form--row">
+        <label class="flatbond-create-form_pound--fee">£</label>
+        <input class="flatbond-create-form_fee" formControlName="membershipFee" placeholder="Your membership fee" />
+      </div>
+
+      <div class="flatbond-create-form--row">
+        <label class="flatbond-create-form_postcode--label">Your postcode</label>
+        <input class="flatbond-create-form_postcode" formControlName="postcode" placeholder="postcode" />
+      </div>
+
+      <div class="flatbond-create-form--row">
+        <button class="flatbond-create-form_send" type="submit" [disabled]="flatbondForm.invalid">Send</button>
+      </div>
+
+    </form>
+  </section>
+</div>

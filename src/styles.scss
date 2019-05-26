@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/flatfair-theme.scss";
+
+body {
+    background-color: $flatfair-color-white-dark;
+    margin: 0;
+    padding: 0;
+}

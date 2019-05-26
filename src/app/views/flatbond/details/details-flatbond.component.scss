@@ -1,0 +1,36 @@
+@import "./../../../../assets/styles/flatfair-theme.scss";
+
+.flatbond-details {
+
+    h2 {
+        color: $flatfair-color-blue-dark;
+        margin-bottom: 10px;
+    }
+
+    &--row {
+        color: $flatfair-color-blue-light;
+        font-size: 20px;
+    }
+
+    &_fee {
+        color: $flatfair-color-blue-dark;
+    }
+    
+    &_button {
+        background-color: $flatfair-color-blue-light;
+        border: 2px solid $flatfair-color-blue-dark;
+        border-radius: 4px;
+        color: $flatfair-color-white-light;
+        cursor: pointer;
+        font-size: 20px;
+        margin: 20px 0;
+        padding: 0 10px;
+        text-align: center;
+        width: 40%;
+
+        &:hover {
+            background-color: $flatfair-color-blue-dark;
+            border: 2px solid $flatfair-color-blue-light;
+        }
+    }
+}
