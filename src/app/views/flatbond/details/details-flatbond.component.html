@@ -2,19 +2,31 @@
     <section>
         <h2>Details of your Flatbond</h2>
 
-        <div class="flatbond-details--row">
+        <div class="flatbond-details_row">
             You pay £<span>{{ details.amount }}</span> per <span>{{ details.recurrence }}</span>
-        </div>
-
-        <div class="flatbond-details--row">
             for your home in <span>{{ details.postcode }}</span>
         </div>
 
-        <div class="flatbond-details--row flatbond-details_fee">
-            So we offer a membership fee of £ <span>{{ details.fee }}</span>
+        <table>
+            <thead>
+                <td>Your rent</td>
+                <td>VAT (20%)</td>
+                <td>TOTAL</td>
+            </thead>
+            <tr>
+                <td>{{ details.amount }}</td>
+                <td>{{ details.vat }}</td>
+                <td>{{ details.fee }}</td>
+            </tr>
+        </table>
+
+        <div class="flatbond-details_row">
+            <div class="flatbond-details_row--fee">
+                So we offer a membership fee of £<span>{{ details.fee }}</span>
+            </div>
         </div>
 
-        <div class="flatbond-details--row">
+        <div class="flatbond-details_row">
             <button class="flatbond-details_button"(click)="back()">Back</button>
         </div>
     </section>

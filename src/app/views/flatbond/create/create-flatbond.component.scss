@@ -4,7 +4,8 @@
 
     h2 {
         color: $flatfair-color-blue-dark;
-        margin-bottom: 10px;
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 
     .loading {
@@ -14,79 +15,131 @@
     &-form {
 
         padding: 10px 0;
-        &--row {
-            text-align: right;
+
+        &_row-amount {
+            align-items: baseline;
+            display: flex;
+            text-align: left;
+            margin: 10px 0;
+
+            &--input {
+                border-width: 0;
+                border-bottom: 1px solid $flatfair-color-gray-light;
+                box-sizing: border-box;
+                color: $flatfair-color-gray-dark;
+                font-size: 18px;
+                padding: 0 10px;
+                text-align: right;
+                flex-grow: 1;
+            }
+
+            &--text {
+                box-sizing: border-box;
+                color: $flatfair-color-gray-dark;
+                font-size: 18px;
+                padding: 0 10px;
+                text-align: center;
+                flex-grow: 0;
+            }
         }
 
-        &_pound,
-        &_pound--fee,
-        &_per,
-        &_postcode--label {
-            color: $flatfair-color-blue-light;
-            font-size: 20px;
-            padding: 0 10px;
-            text-align: right;
-            width: 10%;
+        &_row-postcode {
+            align-items: baseline;
+            text-align: left;
+            margin: 10px 0;
+
+            &--input {
+                border-width: 0;
+                border-bottom: 1px solid $flatfair-color-gray-light;
+                box-sizing: border-box;
+                color: $flatfair-color-gray-dark;
+                font-size: 18px;
+                padding: 0 10px;
+                text-align: right;
+            }
+
+            &--text {
+                box-sizing: border-box;
+                color: $flatfair-color-gray-dark;
+                padding: 0 10px;
+                font-size: 18px;
+            }
         }
 
-        &_amount,
-        &_recurrence,
-        &_postcode {
-            border: 1px solid $flatfair-color-gray-light;
-            border-radius: 4px;
-            font-size: 20px;
-            padding: 0 10px;
-            text-align: right;
-            width: 40%;
+        &_row-fee {
+            text-align: left;
+            margin: 10px 0;
+
+            &--input {
+                background-color: $flatfair-color-white-light;
+                border-width: 0;
+                border-bottom: 1px solid $flatfair-color-gray-light;
+                box-sizing: border-box;
+                color: $flatfair-color-blue-dark;
+                font-size: 24px;
+                padding: 0 10px;
+                text-align: right;
+                width: 40%;
+            }
+
+            &--text {
+                box-sizing: border-box;
+                color: $flatfair-color-blue-dark;
+                font-size: 24px;
+                padding: 8px 10px 0 10px;
+                width: 60%;
+            }
         }
 
-        &_pound--fee {
-            color: $flatfair-color-blue-dark;
-        }
+        &_row-message {
+            text-align: left;
+            margin: 10px 0;
+            min-height: 48px;
 
-        &_fee {
-            background-color: $flatfair-color-white-light;
-            border: 1px solid $flatfair-color-gray-light;
-            color: $flatfair-color-blue-dark;
-            font-size: 24px;
-            margin-bottom: 10px;
-            padding: 0 10px;
-            text-align: right;
-            width: 90%;
-        }
-
-        &_postcode--label {
-            text-align: right;
-            width: 40%;
-        }
-
-        &_postcode {            
-            width: 60%;
-        }
-
-        &_send {
-            background-color: $flatfair-color-blue-light;
-            border: 2px solid $flatfair-color-blue-dark;
-            border-radius: 4px;
-            color: $flatfair-color-white-light;
-            cursor: pointer;
-            font-size: 20px;
-            margin: 20px 0;
-            padding: 0 10px;
-            text-align: center;
-            width: 40%;
-
-            &:hover {
-                background-color: $flatfair-color-blue-dark;
+            &--text {
                 border: 2px solid $flatfair-color-blue-light;
-            }
-
-            &:disabled {
-                background-color: $flatfair-color-gray-light;
                 color: $flatfair-color-blue-light;
-                cursor: not-allowed;
+                padding: 10px;
             }
         }
+
+        &_row-button {
+            text-align: right;
+
+            button {
+                background-color: $flatfair-color-blue-light;
+                border: 2px solid $flatfair-color-blue-light;
+                color: $flatfair-color-white-light;
+                cursor: pointer;
+                font-size: 20px;
+                margin: 20px 0;
+                padding: 0 10px;
+                text-align: center;
+                width: 40%;
+    
+                -webkit-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+                -moz-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+                box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+    
+                &:hover {
+                    background-color: $flatfair-color-white-light;
+                    color: $flatfair-color-blue-light;
+                }
+    
+                &:disabled {
+                    background-color: $flatfair-color-gray-light;
+                    border: 2px solid $flatfair-color-gray-light;
+                    color: $flatfair-color-gray-dark;
+                    cursor: not-allowed;
+    
+                    -webkit-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+                    -moz-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+                    box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+                }
+            }
+        }
+
+        
 
     }
 

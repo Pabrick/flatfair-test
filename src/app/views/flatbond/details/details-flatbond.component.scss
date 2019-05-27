@@ -4,33 +4,73 @@
 
     h2 {
         color: $flatfair-color-blue-dark;
-        margin-bottom: 10px;
-    }
-
-    &--row {
-        color: $flatfair-color-blue-light;
-        font-size: 20px;
-    }
-
-    &_fee {
-        color: $flatfair-color-blue-dark;
-    }
-    
-    &_button {
-        background-color: $flatfair-color-blue-light;
-        border: 2px solid $flatfair-color-blue-dark;
-        border-radius: 4px;
-        color: $flatfair-color-white-light;
-        cursor: pointer;
-        font-size: 20px;
-        margin: 20px 0;
-        padding: 0 10px;
+        font-size: 28px;
+        margin-bottom: 20px;
         text-align: center;
-        width: 40%;
+    }
 
-        &:hover {
-            background-color: $flatfair-color-blue-dark;
+    table {
+        margin: 30px 0;
+        padding: 0;
+        width: 100%;
+
+        thead td {
+            border-bottom: 2px solid $flatfair-color-blue-dark;
+            color: $flatfair-color-blue-dark;
+            font-size: 20px;
+            text-align: center;
+        } 
+
+        tr td {
+            color: $flatfair-color-gray-dark;
+            font-size: 20px;
+            padding: 0 20px;
+            text-align: right;
+            &:nth-child(even) {
+                background-color: $flatfair-color-white-dark;
+            }
+        }  
+    }
+
+    &_row {
+        color: $flatfair-color-gray-dark;
+        font-size: 20px;
+
+        &--fee {
+            color: $flatfair-color-blue-dark;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: $flatfair-color-blue-light;
             border: 2px solid $flatfair-color-blue-light;
+            color: $flatfair-color-white-light;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 20px 0;
+            padding: 0 10px;
+            text-align: center;
+            width: 40%;
+
+            -webkit-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+            -moz-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+            box-shadow: 4px 4px 0px 0px $flatfair-color-blue-dark;
+
+            &:hover {
+                background-color: $flatfair-color-white-light;
+                color: $flatfair-color-blue-light;
+            }
+
+            &:disabled {
+                background-color: $flatfair-color-gray-light;
+                border: 2px solid $flatfair-color-gray-light;
+                color: $flatfair-color-gray-dark;
+                cursor: not-allowed;
+
+                -webkit-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+                -moz-box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+                box-shadow: 4px 4px 0px 0px $flatfair-color-blue-light;
+            }
         }
     }
 }

@@ -15,12 +15,14 @@ h1 {
     }
     .wrapper {
         background-color: $flatfair-color-white-light;
-        border: 3px solid $flatfair-color-blue-light;
-        border-radius: 10px;
         display: block;
         margin: 40px auto;
         max-width: 500px;
-        padding: 10px 20px;
+        padding: 20px;
         width: 90%;
+
+        -webkit-box-shadow: 10px 10px 0px 0px $flatfair-color-blue-light;
+        -moz-box-shadow: 10px 10px 0px 0px $flatfair-color-blue-light;
+        box-shadow: 10px 10px 0px 0px $flatfair-color-blue-light;
     }
 }

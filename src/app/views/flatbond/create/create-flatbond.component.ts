@@ -1,26 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { FlatfairService } from 'src/app/shared/flatfair.service';
 import { FixedMembership } from 'src/app/shared/FixedMembership.class';
+import { Subscription, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create-flatbond.component.html',
   styleUrls: ['./create-flatbond.component.scss']
 })
-export class CreateFlatbondComponent implements OnInit {
+export class CreateFlatbondComponent implements OnInit, OnDestroy {
 
   public loading: boolean = true;
   public flatbondForm: FormGroup;
+  public message: string;
+  private VAT = 20;
   private RECURRENCE_WEEK = "week";
   private RECURRENCE_MONTH = "month";
+  private dataSubject: BehaviorSubject<FixedMembership>;
+  private dataSubscription: Subscription;
 
   constructor(public router: Router, private formBuilder: FormBuilder, public flatfairService: FlatfairService, ) {
-    this.flatfairService.getData().subscribe(() => {
+
+    this.dataSubject = new BehaviorSubject<FixedMembership>(this.flatfairService.membershipConfig);
+    this.dataSubscription = this.dataSubject.subscribe(() => {
       this.loading = false;
     });
+
   }
 
   ngOnInit() {
@@ -34,10 +42,15 @@ export class CreateFlatbondComponent implements OnInit {
     this.onChanges();
   }
 
+  ngOnDestroy() {
+    this.dataSubscription.unsubscribe();
+  }
+
   public onSubmit(form: FormGroup) {
     let data = {
       amount: this.flatbondForm.get('amount').value,
       fee: this.flatbondForm.get('membershipFee').value,
+      vat: Math.ceil(this.flatbondForm.get('amount').value * (this.VAT / 100)),
       postcode: this.flatbondForm.get('postcode').value,
       recurrence: this.flatbondForm.get('recurrence').value,
     };
@@ -64,14 +77,20 @@ export class CreateFlatbondComponent implements OnInit {
   }
 
   private getFee(fixedMembership: FixedMembership, value: number): number {
-    const VAT = 20;
     const MINIMUN_FEE = 120;
+    
+    let fee = value;
+  
+    if (value && value < MINIMUN_FEE) {
+      fee = MINIMUN_FEE;
+      this.message = "The minimun fee is £120 + VAT";
+    }
 
-    let fee = value < MINIMUN_FEE ? MINIMUN_FEE : value;
     if (fixedMembership.fee) {
+      this.message = "Your membership fee is fixed";
       fee = fixedMembership.feeAmount;
     }
-    fee = fee + fee * (VAT / 100);
+    fee = fee + fee * (this.VAT / 100);
 
     return fee;
   }
